@@ -3,9 +3,16 @@
 //  MinisasNovelties
 //
 //  Created by Paola Rodriguez on 2/27/21.
+//  Copyright @ 2021 Paola Rodriguez. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import Stripe
+import Alamofire
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       
+        FirebaseApp.configure()
+        initializeStripe()
+        
         return true
     }
 
@@ -31,6 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+//MARK: - Stripe * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    
+    func initializeStripe() {
+
+        //STPPaymentConfiguration.shared.publishableKey = Constants.publishableKey
+        
+        STPAPIClient.shared.publishableKey = Constants.pulishableKey
+        
+        StripeClient.sharedClient.baseURLString = Constants.baseURLString
+        
+     }
 
 }
 

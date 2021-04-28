@@ -3,9 +3,15 @@
 //  MinisasNovelties
 //
 //  Created by Paola Rodriguez on 2/27/21.
+//  Copyright @ 2021 Paola Rodriguez. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+//import FirebaseFirestoreSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
